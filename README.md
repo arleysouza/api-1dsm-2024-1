@@ -17,7 +17,38 @@ Instalar os pacotes necessários para rodar o servidor:
 cd projeto/servidor
 npm i
 ```
-Criar o BD no SGBD PostgreSQL e, na sequência, atualize as variáveis de ambientes do arquivo .env com os parâmetros usados para fazer a conexão ao BD no SGBD:
+Passos para configurar o projeto:
+1 - Acesse o SGBD PostgreSQL usando o pgAdmin e crie um BD de nome bdapi;
+2 - No pgAdmin, execute os comandos SQL a seguir para criar as tabelas `tbusuario` e `tbquestao`. Essas tabelas serão usados para você testar o código, posteriormente, você terá de criar mais tabelas:
+```
+DROP TABLE if exists tbusuario;
+DROP TABLE if exists tbquestao;
+
+CREATE TABLE tbusuario (
+  idusuario SERIAL PRIMARY KEY,
+  mail VARCHAR(50) NULL,
+  nome VARCHAR(50) NULL
+);
+
+CREATE TABLE tbquestao (
+  idquestao SERIAL PRIMARY KEY,
+  enunciado VARCHAR(256) NULL,
+  resposta BOOL NULL
+);
+
+INSERT INTO tbquestao (enunciado, resposta) 
+VALUES
+('Uma variável é um espaço na memória do computador?', true),
+('O tipo de dado é o conteúdo da variável?', false),
+('Os tipos de dados podem ser primitivos ou objetos?', true),
+('Na estrutura decisão if...else o bloco if pode existir sem o bloco else?', true ),
+('Na estrutura decisão if...else o bloco else pode existir sem o bloco if?', false),
+('A estrutura de decisão if...else pode ser aninhada dentro de um bloco if ou else?', true),
+('Uma estrutura de repetição for pode ser usada quando o número de iterações é desconhecido?', false),
+('O loop do...while executa o bloco de código pelo menos uma vez, mesmo se a condição for inicialmente falsa?', true),
+('Em uma estrutura de repetição while, o bloco de código é executado enquanto a condição especificada for falsa?', false);
+```
+3 - No VS Code, atualize o arquivo `.env` da pasta `servidor` para ter os dados de conexão com o BD `bdapi`, ou algum outro nome que você tenha dado. As variáveis de ambientes do arquivo `.env` possuem os parâmetros usados para fazer a conexão ao BD no SGBD:
 ```
 PORTA = 3030
 BDUSUARIO = postgres
@@ -26,13 +57,13 @@ BDNOME = bdapi
 BDSENHA = 123
 BDPORTA = 5432
 ```
-Instruções para subir o servidor:
+4 - Execute um dos comandos a seguir no terminal do VS Code, é necessário estar dentro da pasta `servidor`:
 ```
 npm run dev
 ou
 npm start
 ```
-Teste no navegador:
+5 - Teste no navegador:
 ```
 http://localhost:3030/
 ```
