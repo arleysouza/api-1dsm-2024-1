@@ -18,8 +18,8 @@ cd projeto/servidor
 npm i
 ```
 Passos para configurar o projeto:
-1 - Acesse o SGBD PostgreSQL usando o pgAdmin e crie um BD de nome bdapi;
-2 - No pgAdmin, execute os comandos SQL a seguir para criar as tabelas `tbusuario` e `tbquestao`. Essas tabelas serão usados para você testar o código, posteriormente, você terá de criar mais tabelas:
+1. Acesse o SGBD PostgreSQL usando o pgAdmin e crie um BD de nome bdapi;
+2. No pgAdmin, execute os comandos SQL a seguir para criar as tabelas `tbusuario` e `tbquestao`. Essas tabelas serão usados para você testar o código, posteriormente, você terá de criar mais tabelas:
 ```
 DROP TABLE if exists tbusuario;
 DROP TABLE if exists tbquestao;
@@ -48,7 +48,7 @@ VALUES
 ('O loop do...while executa o bloco de código pelo menos uma vez, mesmo se a condição for inicialmente falsa?', true),
 ('Em uma estrutura de repetição while, o bloco de código é executado enquanto a condição especificada for falsa?', false);
 ```
-3 - No VS Code, atualize o arquivo `.env` da pasta `servidor` para ter os dados de conexão com o BD `bdapi`, ou algum outro nome que você tenha dado. As variáveis de ambientes do arquivo `.env` possuem os parâmetros usados para fazer a conexão ao BD no SGBD:
+3. No VS Code, atualize o arquivo `.env` da pasta `servidor` para ter os dados de conexão com o BD `bdapi`, ou algum outro nome que você tenha dado. As variáveis de ambientes do arquivo `.env` possuem os parâmetros usados para fazer a conexão ao BD no SGBD:
 ```
 PORTA = 3030
 BDUSUARIO = postgres
@@ -57,13 +57,13 @@ BDNOME = bdapi
 BDSENHA = 123
 BDPORTA = 5432
 ```
-4 - Execute um dos comandos a seguir no terminal do VS Code, é necessário estar dentro da pasta `servidor`:
+4. Execute um dos comandos a seguir no terminal do VS Code, é necessário estar dentro da pasta `servidor`:
 ```
 npm run dev
 ou
 npm start
 ```
-5 - Teste no navegador:
+5. Teste no navegador:
 ```
 http://localhost:3030/
 ```
