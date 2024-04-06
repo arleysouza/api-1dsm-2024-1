@@ -18,7 +18,7 @@ cd projeto/servidor
 npm i
 ```
 Passos para configurar o projeto:
-1. Acesse o SGBD PostgreSQL usando o pgAdmin e crie um BD de nome bdapi;
+1. Acesse o SGBD PostgreSQL usando o pgAdmin e crie um BD de nome `bdapi`;
 2. No pgAdmin, execute os comandos SQL a seguir para criar as tabelas `tbusuario` e `tbquestao`. Essas tabelas serão usados para você testar o código, posteriormente, você terá de criar mais tabelas:
 ```
 DROP TABLE if exists tbusuario;
