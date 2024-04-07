@@ -1,4 +1,4 @@
-## API - 1DSM - 2024-1 - Código de Exemplo
+## ABP - 1DSM - 2024-1 - Código de Exemplo
 
 O código é formado pelas pastas:
 - servidor: exemplo de código para fazer as operações no SGBD PostgreSQL;
