@@ -82,7 +82,7 @@ app.use(function(req,res){
     res.json({erro:"Rota desconhecida"});
 });
 ```
-Exemplos de rotas:
+### Exemplos de rotas
 A rota `/questao` responde a lista de questões e pode ser testada diretamente no navegador, por ela usar o método HTTP GET, já as demais rotas não funcionam diretamente no navegador:
 ```
 http://localhost:3030/questao
