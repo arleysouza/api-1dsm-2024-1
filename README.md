@@ -64,6 +64,30 @@ ou
 npm start
 ```
 5. Teste no navegador:
+As rotas estão mapeadas no servidor no arquivo `src/index.js`. Atualmente existem as rotas `/usuario`, `/login` e `/questao`. Uma rota é formado pelo caminha + método HTTP. As rotas `/usuario` e `/login` usam o método HTTP POST.
 ```
-http://localhost:3030/
+// Define a rota /usuario usando o método HTTP POST
+// A rota é mapeada para a função criar
+app.post("/usuario", criar);
+
+// Define a rota /login usando o método HTTP POST
+app.post("/login", buscar);
+
+// Define a rota /usuario usando o método HTTP GET
+app.get("/questao", listar);
+```
+Qualquer outra rota será tratada pelo código a seguir:
+```
+app.use(function(req,res){
+    res.json({erro:"Rota desconhecida"});
+});
+```
+Exemplos de rotas:
+A rota `/questao` responde a lista de questões e pode ser testada diretamente no navegador, por ela usar o método HTTP GET, já as demais rotas não funcionam diretamente no navegador:
+```
+http://localhost:3030/questao
+```
+A rota `/login` requer que o cliente envie o e-mail e, por utilizar o método HTTP POST, não pode ser testada diretamente no navegador:
+```
+http://localhost:3030/login
 ```
