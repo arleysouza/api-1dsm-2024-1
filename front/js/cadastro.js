@@ -1,5 +1,3 @@
-const urlbase = "http://localhost:3030";
-
 function salvarUsuario() {
   const mail = document.getElementById("mail").value.trim();
   const nome = document.getElementById("nome").value.trim();

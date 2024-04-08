@@ -15,7 +15,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  min-height: 60px;
   padding: 0px 10px;
   z-index: 1000; /* Para garantir que o menu esteja acima de outros elementos */
   border-bottom: 1px solid #aaa;

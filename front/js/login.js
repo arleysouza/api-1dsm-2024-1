@@ -1,5 +1,3 @@
-const urlbase = "http://localhost:3030";
-
 function logar() {
   const mail = document.getElementById("login-mail").value.trim();
 
@@ -46,15 +44,4 @@ function logar() {
 function salvarLogin(objeto) {
   // JSON.stringify() é usado para converter de objeto JS em string JSON
   localStorage.setItem("usuario", JSON.stringify(objeto));
-}
-
-// Recuperar dados de login
-function checarLogin() {
-  let objeto = localStorage.getItem("usuario");
-  // JSON.parse() converte uma string JSON em um objeto JS
-  objeto = JSON.parse(objeto);
-  if( objeto && objeto.idusuario ){
-    return objeto;
-  }
-  return undefined; // não possui login
 }
