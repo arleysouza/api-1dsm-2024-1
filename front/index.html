@@ -4,33 +4,30 @@
     <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./js/usuario.js"></script>
-    <script src="./js/questao.js"></script>
+    <script src="./js/geral.js"></script>
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body onload="listarQuestao()">
-    <div style="border: 1px solid #888; padding: 10px; margin: 10px">
-      <p>Cadastro de usuário</p>
-      <div>
-        <label for="mail">e-mail</label>
-        <input type="email" id="mail" placeholder="Insira seu e-mail" />
-      </div>
-      <div>
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Insira seu nome" />
-      </div>
-      <button onclick="salvarUsuario()">Salvar usuário</button>
+  <body onload="carregarLogin();listarQuestao();">
+    <div id="bar">
+      <div id="botao-login" class="botao" onclick="login()">Login</div>
+      <div id="botao-logout" class="botao" onclick="logout()">Logout</div>
     </div>
-    <div style="border: 1px solid #888; padding: 10px; margin: 10px">
-      <p>Login</p>
-      <div>
-        <label for="login-mail">e-mail</label>
-        <input type="email" id="login-mail" placeholder="Insira seu e-mail" />
-      </div>
-      <button onclick="logar()">Logar</button>
-    </div>
-    <div style="border: 1px solid #888; padding: 10px; margin: 10px">
-      <p>Lista de questões</p>
-      <div id="saida"></div>
+    <div class="box">
+      <h3>Desafio</h3>
+      <p>
+        O Scrum é uma metodologia ágil de desenvolvimento de software que tem
+        como objetivo principal aumentar a eficiência e a flexibilidade na
+        entrega de produtos e projetos complexos. Criado inicialmente por Jeff
+        Sutherland e Ken Schwaber nos anos 90, o Scrum tem sido amplamente
+        adotado não apenas na indústria de software, mas também em muitos outros
+        setores.
+      </p>
+      <p>
+        Embora o Scrum ofereça uma estrutura simples e flexível para o
+        desenvolvimento de produtos, sua implementação eficaz requer uma
+        compreensão profunda dos princípios subjacentes e uma capacidade de
+        adaptação às necessidades específicas de cada equipe e projeto.
+      </p>
     </div>
   </body>
 </html>
